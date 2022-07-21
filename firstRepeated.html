@@ -1,0 +1,46 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            
+           function firstRepeated(arr, n) {
+                 // your code here with hashmap
+                //  let uniques = new Map()
+                //  let duplicates = {}
+                //  for(let i=0;i<n;i++){
+                //     let num = arr[i]
+                //     if(!uniques.get(num)){
+                //         uniques.set(num , i+1);
+                //     }else{
+                //         duplicates[uniques.get(num)] = 1
+                //     }
+                //  }
+                //  return Object.keys(duplicates)[0] || -1;
+
+                //with objects
+                let uniques = {}
+                 let duplicates = {}
+                 for(let i=0;i<n;i++){
+                    let num = arr[i]
+                    if(!uniques.hasOwnProperty(num)){
+                        uniques[num] = i+1;
+                    }else{
+                        duplicates[uniques[num]] = 1
+                    }
+                 }
+                 return Object.keys(duplicates)[0] || -1;
+            };
+            // const arry = [2 ,3, 1, 2, 3];
+            // var duplicateElements = duplicates(arry,5);
+
+            // const arry = [1,9,5,8,3,6,10,99,44,66,77,88,00];
+            // var duplicateElements = duplicates(arry,13);
+
+            // const arry = [13,9,25,1,1,0,22,13,22,20,3,8,11,25,10,3,15,11,19,20,2,4,25,14,23,14];
+            const arry = [1, 5, 3, 4, 3, 5, 6];
+            console.log(arry)
+            var duplicateElements = firstRepeated(arry,arry.length);
+            console.log(duplicateElements);
+        </script>
+    </body>
+</html>
