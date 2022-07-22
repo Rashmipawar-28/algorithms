@@ -1,0 +1,31 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function missingnumber(a, n)
+            {
+                let missingValues;
+                a.sort((a,b)=>(b-a))
+                for(i=0;i<n;i++){
+                    if(a[i+1] != undefined){
+                        if(a[i] - a[i+1] !== 1){
+                            missingValues = a[i]-1
+                        }
+                    }
+                }
+
+                return missingValues;
+            }
+            // const arry = [2 ,3, 1, 2, 3];
+            // var duplicateElements = duplicates(arry,5);
+
+            const arry = [6,1,2,8,3,4,7,10,5];
+            // var duplicateElements = duplicates(arry,13);
+
+            // const arry = [13,9,25,1,1,0,22,13,22,20,3,8,11,25,10,3,15,11,19,20,2,4,25,14,23,14];
+            console.log(arry)
+            var duplicateElements = missingnumber(arry,2);
+            console.log(duplicateElements,"value");
+        </script>
+    </body>
+</html>
