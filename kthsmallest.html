@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function kthSmallest(arr,l,r,k){
+                //code here
+                arr.sort((a,b)=>a-b);
+                return arr[k-1];
+            }
+
+            // N = 5
+            // arr = [7 ,10, 4, 20, 15]
+            // K = 4
+            // var output = kthSmallest(arr,7,15,4)
+            // console.log(output)
+
+            N = 6
+            arr = [7 ,10, 4, 3, 20, 15]
+            K = 3
+            var output = kthSmallest(arr,7,15,K)
+            console.log(output)
+        </script>
+    </body>
+</html>

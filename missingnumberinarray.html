@@ -2,30 +2,49 @@
     <head></head>
     <body>
         <script>
-            function missingnumber(a, n)
+            function missingnumber(array, n)
             {
-                let missingValues;
-                a.sort((a,b)=>(b-a))
-                for(i=0;i<n;i++){
-                    if(a[i+1] != undefined){
-                        if(a[i] - a[i+1] !== 1){
-                            missingValues = a[i]-1
-                        }
-                    }
+                // let missingValues;
+                // a.sort((a,b)=>(b-a))
+                // for(i=0;i<n;i++){
+                //     if(a[i+1] != undefined){
+                //         if(a[i] - a[i+1] !== 1){
+                //             missingValues = a[i]-1
+                //         }
+                //     }
+                // }
+                // let total = 0;
+                // total = n*(n+1)/2;
+                // console.log(total,"total")
+                // for(let i=0;i < array.length ;i++){
+                //     total = total - array[i]
+                //     console.log(total,"total")
+                // }
+                // console.log(total,"number")
+                // return total;
+                // return missingValues;
+
+                let someMap = {}
+                for(let i=0; i<array.length; i++){
+                    someMap[array[i]] = 1;
                 }
 
-                return missingValues;
+                for(let j=1; j<=n; j++){
+                    if(!someMap[j]){
+                        return j
+                    }
+                }
             }
             // const arry = [2 ,3, 1, 2, 3];
             // var duplicateElements = duplicates(arry,5);
 
-            const arry = [6,1,2,8,3,4,7,10,5];
+            const arry = [1];
             // var duplicateElements = duplicates(arry,13);
 
             // const arry = [13,9,25,1,1,0,22,13,22,20,3,8,11,25,10,3,15,11,19,20,2,4,25,14,23,14];
             console.log(arry)
-            var duplicateElements = missingnumber(arry,2);
-            console.log(duplicateElements,"value");
+            var missing = missingnumber(arry,2);
+            console.log(missing,"value");
         </script>
     </body>
 </html>
