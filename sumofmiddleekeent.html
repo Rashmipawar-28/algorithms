@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+           function findMidSum(ar1, ar2 ,n){
+                //code here
+                let sum ;
+                const combined = ar1.concat(ar2);
+                combined.sort((a,b)=> a-b);
+                return sum = combined[n-1] + combined[combined.length - n]
+            }
+
+            N = 5
+            // Ar1 = [1, 2, 4, 6, 10]
+            // Ar2 = [4, 5, 6, 9, 12]
+
+            Ar1 = [1, 12, 15, 26, 38]
+            Ar2 = [2, 13, 17, 30, 45]
+
+            let sum = findMidSum(Ar1,Ar2,N)
+            console.log(sum)
+        </script>
+    </body>
+</html>
